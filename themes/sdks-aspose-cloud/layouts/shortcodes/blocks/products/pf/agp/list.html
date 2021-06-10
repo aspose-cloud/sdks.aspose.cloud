@@ -1,0 +1,10 @@
+{{ $listStyle := .Get "style"}}
+{{ if (eq $listStyle "ol") }}
+<ol>
+    {{ .Inner }}
+</ol>
+{{ else }}
+<ul>
+    {{ .Inner }}
+</ul>
+{{ end }}

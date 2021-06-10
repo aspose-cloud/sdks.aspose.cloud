@@ -1,0 +1,19 @@
+<div class="container-fluid header1 header2 productfamilyheader minify-header">
+    <div class="container">
+        <div class="row pt-lg-5">
+            <div class="col-md-12 padding0">
+                <div class="col-lg-3 col-md-3 pull-right">
+
+                        <img class='col-xs-12 totalimg mt45px lazyloaded {{if .Get "subTitlepfName"}} normalizeImg {{ end }}' src='{{ .Get "logoImageSrc"}}' alt='{{ .Get "pfName" }} {{ if .Get "subTitlepfName" }} {{.Get "subTitlepfName"}}{{ else }} Product Family{{ end }}' width="320">
+                        
+                </div>
+                <div class="padding0 col-lg-9">
+                    <h1>{{ .Get "h1" | markdownify }}</h1>
+                    <h2 class="pr-h2">{{ .Get "h2" | markdownify }}</h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,15 @@
+{{ $curl := .Get "platform" }}
+{{ $link := .Get "link"}}
+
+<li>
+    <div class="offer-products"><a href='{{ if not (strings.HasSuffix $link "/") }}{{  print $link "/" }}{{end}}'>
+        <img src='{{ .Get "imgSrc" }}' alt='{{ .Parent.Get "pfName" }} for {{ .Get "sdkName" }}' class=" lazyloaded"></a>
+        <h5>
+			{{ if (eq $curl "cURL" ) }}
+			<a href='{{ if not (strings.HasSuffix $link "/") }}{{  print $link "/" }}{{end}}'>{{ .Parent.Get "pfName" }} <span class="spanclass">Cloud<em> for </em>{{ .Get "platform" }}</span> </a>
+			{{ else }}
+			<a href='{{ if not (strings.HasSuffix $link "/") }}{{  print $link "/" }}{{end}}'>{{ .Parent.Get "pfName" }} <span class="spanclass">Cloud SDK<em> for </em>{{ .Get "platform" }}</span> </a>
+			{{ end }}
+        </h5>
+    </div>
+</li>
