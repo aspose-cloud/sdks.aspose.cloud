@@ -28,6 +28,3 @@
 
 {{ $js := $js | resources.Minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cms.admin.containerize.com/templates/aspose/css/font-awesome.css" type="text/css">
-<link href="https://cms.admin.containerize.com/templates/asposecloud/css/asposeWordsCloud.min.css" rel="stylesheet" type="text/css" />
-<link href="https://cms.admin.containerize.com/templates/asposecloud/css/asposeWordsCloudFeatures.min.css" rel="stylesheet" type="text/css" />

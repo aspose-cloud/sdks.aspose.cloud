@@ -1,8 +1,9 @@
-
 {{ $scssMain := "scss/main.scss"}}
 {{ $scssProductsMain := "scss/products-main.scss"}}
 {{ $scssCodeBlock := "scss/_code-block.scss"}}
-
+{{ $fontAwesome := "css/font-awesome.css"}}
+{{ $asposeWordsCloud := "css/asposeWordsCloud.min.css"}}
+{{ $asposeWordsCloudFeatures := "css/asposeWordsCloudFeatures.min.css"}}
 
 {{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}
 <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
@@ -15,5 +16,14 @@
 {{ $cssCodeBlockSyntax := resources.Get $scssCodeBlock | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}
 <link href="{{ $cssCodeBlockSyntax.RelPermalink }}" rel="stylesheet" integrity="{{ $cssCodeBlockSyntax.Data.integrity }}">
 
+<link rel="stylesheet" href="https://cms.admin.containerize.com/templates/aspose/css/font-awesome.css" type="text/css">
 
+{{if in .Page.RelPermalink "words" }}
 
+{{ $asposeWordsCloud := resources.Get $asposeWordsCloud }}
+<link href="{{ $asposeWordsCloud.RelPermalink }}" rel="stylesheet">
+
+{{ $asposeWordsCloudFeatures := resources.Get $asposeWordsCloudFeatures }}
+<link href="{{ $asposeWordsCloudFeatures.RelPermalink }}" rel="stylesheet">
+
+{{ end }}

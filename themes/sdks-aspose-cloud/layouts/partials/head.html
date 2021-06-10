@@ -5,8 +5,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TSXP9CZ');</script>
 <!-- End Google Tag Manager -->
+<!-- Yandex -->
 <meta name="yandex-verification" content="1ab7f481c93cc3dd" />
+<!-- End Yandex -->
+<!-- Baidu -->
 <meta name="baidu-site-verification" content="4GkVEn1VeF" />
+<!-- End Baidu -->
 <!-- Start Containerize.Menu  -->
 {{ partial "load-containerize-menu.html" . }}
 <!-- Start Containerize.Menu -->
@@ -40,7 +44,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {{- template "_internal/schema.html" . -}}
 {{ template "_internal/google_analytics_async.html" . }}
 {{ template "_internal/opengraph.html" . }}
-{{ partialCached "head-css.html" . }}
+{{ partial "head-css.html" . }}
 
 {{ partial "hooks/head-end.html" . }}
 
